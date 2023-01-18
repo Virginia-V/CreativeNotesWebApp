@@ -1,3 +1,4 @@
+using CreativeNotes.API.Infrastructure.Extensions;
 using CreativeNotes.Bll;
 using CreativeNotes.Bll.Interfaces;
 using CreativeNotes.Bll.Services;
@@ -20,6 +21,10 @@ builder.Services.AddDbContext<CreativeNotesDbContext>(optionBuilder =>
 {
     optionBuilder.UseSqlServer(builder.Configuration.GetConnectionString("CreativeNotesConnection"));
 });
+
+var authOptions = builder.Services.ConfigureAuthOptions(builder.Configuration);
+builder.Services.AddJwtAuthentication(authOptions);
+builder.Services.AddSwagger(builder.Configuration);
 
 var app = builder.Build();
 

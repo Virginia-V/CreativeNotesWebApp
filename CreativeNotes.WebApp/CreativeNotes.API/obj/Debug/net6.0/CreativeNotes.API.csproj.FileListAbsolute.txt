@@ -91,3 +91,4 @@ C:\Users\Admin\OneDrive\Документы\Web Development\CreativeWrites Projec
 C:\Users\Admin\OneDrive\Документы\Web Development\CreativeWrites Project\CreativeNotes.WebApp\CreativeNotes.API\obj\Debug\net6.0\CreativeNotes.API.genruntimeconfig.cache
 C:\Users\Admin\OneDrive\Документы\Web Development\CreativeWrites Project\CreativeNotes.WebApp\CreativeNotes.API\obj\Debug\net6.0\ref\CreativeNotes.API.dll
 C:\Users\Admin\OneDrive\Документы\Web Development\CreativeWrites Project\CreativeNotes.WebApp\CreativeNotes.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Admin\OneDrive\Документы\Web Development\CreativeWrites Project\CreativeNotes.WebApp\CreativeNotes.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
