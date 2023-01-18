@@ -2,6 +2,7 @@
 using CreativeNotes.Bll.Interfaces;
 using CreativeNotes.Common;
 using CreativeNotes.Common.Dtos.Posts;
+using CreativeNotes.Common.Exceptions;
 using CreativeNotes.Dal.Interfaces;
 using CreativeNotes.Domain;
 
@@ -29,7 +30,7 @@ namespace CreativeNotes.Bll.Services
             var post = await _postRepository.GetByIdAsync(id);
             if (post == null)
             {
-                throw new InvalidOperationException(ErrorMessages.NoPostForDelete);
+                throw new ValidationException(ErrorMessages.NoPostForDelete);
             }
             await _postRepository.DeleteAsync(post);
         }
@@ -52,7 +53,7 @@ namespace CreativeNotes.Bll.Services
             var post = await _postRepository.GetByIdAsync(id);
             if (post == null)
             {
-                throw new InvalidOperationException(ErrorMessages.NoPostForUpdate);
+                throw new ValidationException(ErrorMessages.NoPostForUpdate);
             }
             _mapper.Map(dto, post);
             await _postRepository.UpdateAsync(post);

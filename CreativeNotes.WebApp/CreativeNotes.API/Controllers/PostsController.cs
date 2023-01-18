@@ -9,45 +9,39 @@ namespace CreativeNotes.API.Controllers
     {
         private readonly IPostService _postService;
 
-        public PostsController(IPostService postService)
+        public PostsController(IPostService postService, ILogger<PostsController> logger) : base(logger)
         {
             _postService = postService;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetPostsAsync()
+        public Task<IActionResult> GetPostsAsync()
         {
-            var posts =  await _postService.GetPostsAsync();
-            return Ok(posts);
-           
+            return HandleAsync(() => _postService.GetPostsAsync());
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPostAsync(int id)
+        public Task<IActionResult> GetPostAsync(int id)
         {
-            var post = await _postService.GetPostByIdAsync(id);
-            return Ok(post);
+            return HandleAsync(() => _postService.GetPostByIdAsync(id));
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePostAsync([FromBody] CreatePostDto postDto)
+        public Task<IActionResult> CreatePostAsync([FromBody] CreatePostDto postDto)
         {
-            await _postService.CreatePostAsync(postDto);
-            return Ok();
+            return HandleAsync(() => _postService.CreatePostAsync(postDto));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePostAsync(int id, [FromBody] UpdatePostDto postDto)
+        public Task<IActionResult> UpdatePostAsync(int id, [FromBody] UpdatePostDto postDto)
         {
-            await _postService.UpdatePostAsync(id, postDto);
-            return Ok();
+            return HandleAsync(() => _postService.UpdatePostAsync(id, postDto));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePostAsync(int id)
+        public Task<IActionResult> DeletePostAsync(int id)
         {
-            await _postService.DeletePostAsync(id);
-            return Ok();
+            return HandleAsync(() => _postService.DeletePostAsync(id));
         }
     }
 }

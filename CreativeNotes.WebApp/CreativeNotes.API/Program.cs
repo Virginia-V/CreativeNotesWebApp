@@ -1,4 +1,3 @@
-using CreativeNotes.API.Infrastructure.Extensions;
 using CreativeNotes.Bll;
 using CreativeNotes.Bll.Interfaces;
 using CreativeNotes.Bll.Services;
@@ -32,11 +31,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseExceptionHandling();
-
 app.UseRouting();
 
 app.UseCors(configurePolicy => configurePolicy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
