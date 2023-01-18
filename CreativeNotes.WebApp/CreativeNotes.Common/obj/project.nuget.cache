@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+EUTfCNaPVKwtj+JGjXmo3lhvUndvDpeEp0rs8xKbaxXxT3l0U5491URukrh8h2lx8ota1Qc1mz1gCVvyVGACA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Документы\\Web Development\\CreativeWrites Project\\CreativeNotes.WebApp\\CreativeNotes.Common\\CreativeNotes.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
